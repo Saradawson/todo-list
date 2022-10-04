@@ -22,6 +22,13 @@ function App() {
     })
   }
 
+  const clearCompleted = () => {
+    let notCompletedTodos = todos.filter(todo => {
+      if(!todo.isDone) return todo;
+    })
+    setTodos(notCompletedTodos);
+  }
+
   
   return (
     <div className="App">
@@ -36,6 +43,7 @@ function App() {
         <button type='submit'>Add</button>
       </form>
       <TodoList todos={todos} setTodos={setTodos}/>
+      <button onClick={clearCompleted}>Clear Completed</button>
     </div>
   );
 }
