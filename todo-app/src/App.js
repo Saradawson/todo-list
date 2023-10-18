@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <form onSubmit={onSubmit}>
+      <form className='todo-input' onSubmit={onSubmit}>
         <input
           onChange={handleChange}
           value={todo.description} 
